@@ -11,11 +11,11 @@ export const MainHeader = () => {
       <Header />
       <Headline>
         <H1>Make a community sustainable together</H1>
-        {A({ href: '/how-it-works' })(
+        <A href="/how-it-works">
           <Button type="primary" size="large">
             How it works
           </Button>
-        )}
+        </A>
       </Headline>
     </>
   )

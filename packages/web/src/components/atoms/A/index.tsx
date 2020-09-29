@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import Link, { LinkProps } from 'next/link'
 import styled from 'styled-components'
 
@@ -7,10 +7,13 @@ const StyledLink = styled.a`
   display: contents;
 `
 
-export const A = (props: LinkProps) => (component: JSX.Element) => {
+interface Props extends LinkProps {
+  children?: ReactNode
+}
+export const A = (props: Props) => {
   return (
     <Link passHref {...props}>
-      <StyledLink>{component}</StyledLink>
+      <StyledLink>{props.children}</StyledLink>
     </Link>
   )
 }

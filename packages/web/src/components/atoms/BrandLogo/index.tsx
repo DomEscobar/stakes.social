@@ -7,14 +7,14 @@ interface Props {
   props: SVGProps<SVGSVGElement>
 }
 
-const link = A({ href: '/' })
-
 export const BrandLogo = ({ colorSchema, props }: Props) => {
-  return link(
-    colorSchema === 'black' ? (
-      <StakesSocialBlack height={undefined} {...props}></StakesSocialBlack>
-    ) : (
-      <StakesSocialWhite height={undefined} {...props}></StakesSocialWhite>
-    )
+  return (
+    <A href="/">
+      {colorSchema === 'black' ? (
+        <StakesSocialBlack height={undefined} {...props}></StakesSocialBlack>
+      ) : (
+        <StakesSocialWhite height={undefined} {...props}></StakesSocialWhite>
+      )}
+    </A>
   )
 }
